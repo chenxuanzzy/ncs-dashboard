@@ -1,0 +1,6 @@
+.appWrapper {
+  padding-top: 50px;
+  &.transition {
+    transition: all 0.5s ease-in-out;
+  }
+}

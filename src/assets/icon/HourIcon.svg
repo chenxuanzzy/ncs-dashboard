@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="Form_23" data-name="Form 23" class="cls-1" d="M890,304a11,11,0,1,1,11,11A11,11,0,0,1,890,304Zm2,0a9,9,0,1,0,9-9A9,9,0,0,0,892,304Zm11.293,3.707-3-3A1,1,0,0,1,900,304v-6a1,1,0,1,1,2,0v5.586l2.707,2.706a1,1,0,1,1-1.414,1.415Z" transform="translate(-890 -293)"/>
+</svg>
