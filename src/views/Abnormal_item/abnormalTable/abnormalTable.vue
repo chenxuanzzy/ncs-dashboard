@@ -137,7 +137,7 @@
   color: #d9e1e7;
 }
 .el-input__inner {
-  background-color: #323f58;
+  // background-color: #323f58;
   color: white;
   border: #323f58 1px solid;
 }

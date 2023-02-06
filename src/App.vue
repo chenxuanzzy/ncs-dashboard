@@ -5,8 +5,8 @@
 </template>
 
 <style lang="scss">
-// body,
-// html {
-//   background-color: #151f33;
-// }
+body,
+html {
+  background-color: #151f33;
+}
 </style>
