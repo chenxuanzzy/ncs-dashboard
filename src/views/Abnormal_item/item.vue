@@ -365,7 +365,7 @@ export default {
       .item-right,
       .el-input--small,
       .el-input__inner {
-        border: 0px solid black !important;
+        border: 0px solid white !important;
       }
       // .el-select,
       // .el-input,
@@ -383,7 +383,7 @@ export default {
     }
     .el-input--small .el-input__inner {
       width: 120px;
-      border: 1px solid black;
+      border: 1px solid white;
       border-radius: 5px;
     }
   }

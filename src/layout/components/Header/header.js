@@ -377,7 +377,6 @@ export default {
     },
     updateHeight() {
       let timer = this.routerHomePage ? 510 : 0;
-      console.log(timer);
       setTimeout(() => {
         this.headerHeight = this.$refs.header.offsetHeight + 30;
         this.tabContentHeight = this.homePage

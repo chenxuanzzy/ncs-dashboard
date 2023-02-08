@@ -21,22 +21,11 @@
         </transition>
       </div>
     </div>
+
     <ul class="totalList">
-      <li>
-        <div class="title">觀察人數</div>
-        <div class="total">123,072</div>
-      </li>
-      <li>
-        <div class="title">總人數</div>
-        <div class="total">123,072</div>
-      </li>
-      <li>
-        <div class="title">總數據</div>
-        <div class="total">123,072</div>
-      </li>
-      <li>
-        <div class="title">大數據分析</div>
-        <div class="total">123,072</div>
+      <li v-for="(item, index) in cardTitle" :key="index">
+        <div class="title">{{ item.name }}</div>
+        <div class="total">{{ item.number }}</div>
       </li>
     </ul>
     <div class="infoBox">
@@ -89,13 +78,14 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: 1px solid #000;
+  border: 1px solid white;
   border-radius: 5px;
   .topItem {
+    color: white;
     display: flex;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid white;
     .icon {
       display: flex;
       align-items: center;
@@ -120,20 +110,21 @@
         justify-content: center;
         width: 30px;
         height: 30px;
+        color: white;
       }
       .listBox {
         position: absolute;
         top: 100%;
         right: 0;
         width: 100px;
-        border: 1px solid #000;
+        border: 1px solid white;
         background-color: #fff;
         text-align: center;
         .list {
           padding: 10px;
           cursor: pointer;
           &:not(:last-child) {
-            border-bottom: 1px solid #000;
+            border-bottom: 1px solid white;
           }
         }
       }
@@ -147,19 +138,20 @@
     padding-left: 3px;
     padding-right: 3px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid white;
     > li {
       flex: 1;
       text-align: center;
       padding-left: 5px;
       padding-right: 5px;
+      color: white;
       &:not(:last-child) {
-        border-right: 1px solid #000;
+        border-right: 1px solid white;
       }
     }
     .title {
       font-size: 14px;
-      color: #999;
+      color: white;
       margin-bottom: 7px;
     }
   }
@@ -175,7 +167,7 @@
     justify-content: center;
     width: 100%;
     font-size: 14px;
-    color: #999;
+    color: rgb(153, 153, 153);
   }
   .infoList {
     @include resetList;
@@ -185,11 +177,12 @@
       padding-right: 15px;
       &:not(:last-child) {
         .item {
-          border-bottom: 1px solid #000;
+          border-bottom: 1px solid white;
         }
       }
     }
     .item {
+      color: white;
       display: flex;
       padding-top: 10px;
       padding-bottom: 10px;
@@ -228,9 +221,27 @@ export default {
   data() {
     return {
       isShow: false,
+      cardTitle: [],
+      cardTotal: null,
     };
   },
+  mounted() {
+    let cardList = ["觀察人數", "總人數", "總數據", "數據分析"];
+
+    for (let i = 0; i < cardList.length; i++) {
+      let obj = {};
+      obj["name"] = cardList[i];
+      obj["number"] = this.three(Math.floor(Math.random() * 1000000 + 1));
+      this.cardTitle.push(obj);
+    }
+    console.log(this.cardTitle);
+  },
   methods: {
+    three(num) {
+      const parts = num.toString().split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return parts.join("."); // '$' +
+    },
     pinning(status) {
       this.$bus.$emit("bus:pinning", status);
     },

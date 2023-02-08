@@ -22,16 +22,17 @@
         </div>
         <div class="searchBox">
           <button class="buttonSearch"><icon iconName="search" /></button>
-          <el-input v-model="searchText" placeholder="搜尋..."></el-input>
-          <transition name="fade">
-            <button
-              class="buttonClear"
-              v-if="searchText.length > 0"
-              @click="searchText = ''"
-            >
-              <icon iconName="clear-circle" />
-            </button>
-          </transition>
+          <el-input v-model="searchText" placeholder="搜尋...">
+            <transition name="fade">
+              <button
+                class="buttonClear"
+                v-if="searchText.length > 0"
+                @click="searchText = ''"
+              >
+                <icon iconName="clear-circle" />
+              </button>
+            </transition>
+          </el-input>
         </div>
       </div>
     </div>
@@ -39,8 +40,9 @@
       <div class="searchSectionBox" v-if="searchText.length > 0">
         <div class="searchTitle">
           <button class="buttonClear" @click="searchText = ''">
-            <icon iconName="clear" /></button
-          >搜尋「{{ searchText }}」
+            <icon iconName="clear" />
+          </button>
+          <span class="searchItem">搜尋「{{ searchText }}」</span>
         </div>
         <el-row
           :gutter="20"

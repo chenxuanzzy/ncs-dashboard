@@ -1,5 +1,6 @@
 .cardTitle {
   margin-bottom: 10px;
+  color: white;
 }
 
 .el-col {
@@ -25,7 +26,8 @@
   align-items: center;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid white;
+  color: white;
   .rightBox {
     display: flex;
     align-items: center;
@@ -33,19 +35,22 @@
   }
 }
 
+.el-select-dropdown__list {
+  border: solid 1px white;
+}
 .selectSort::v-deep {
   margin-right: 5px;
   .el-input__inner {
-    border-color: #000;
+    border-color: white;
   }
   .el-select__caret {
-    color: #000;
+    color: white;
     &::before {
       content: "\e78f";
     }
   }
   .el-input {
-    color: #000;
+    color: white;
     &::before {
       content: "\e6d2";
       position: absolute;
@@ -59,11 +64,18 @@
       transform: rotateZ(180deg);
     }
   }
-  // .el-input__inner {
-  //     padding-left: 25px;
-  // }
+  .el-input__inner {
+    padding-left: 25px;
+  }
 }
-
+.searchNoData {
+  margin-top: 10px;
+  display: flex;
+}
+.searchTitle {
+  display: flex;
+  margin-right: 10px;
+}
 .buttonGroup {
   display: flex;
   margin-left: 5px;
@@ -81,10 +93,11 @@
 }
 
 .buttonSort {
+  color: white;
   @include resetButton;
   width: 40px;
   height: 40px;
-  border: 1px solid #000;
+  border: 1px solid white;
   &.asc {
     svg {
       transform: rotate(180deg);
@@ -106,6 +119,9 @@
   }
   .el-input__inner {
     padding-left: 35px;
-    border-color: #000;
+    border-color: white;
   }
+}
+.searchItem {
+  margin-left: 10px;
 }
